@@ -1,0 +1,33 @@
+# Cross-tenant boundary leakage, measured data
+# device       ibm_kingston (heavy-hex, tunable couplers, dt = 4.0 ns)
+# victim q60, probe q61, coupling-graph distance 1
+# date         2026-09-10
+# shots        4096 per circuit; the pfr arm averages two frames, so 8192 per point
+# reported     probe T2 = 53.7 us (backend calibration at time of run)
+# convention   H_cross = zeta Z_a Z_b, dtheta = 4*zeta*tau (zeta angular) ; delta = 0.5*(c0+c1)*|sin(dtheta/2)|
+#
+# arm codes
+#   bare  frame = I only, victim idle in |0> or |1>
+#   pfr   uniform Pauli frame {I,X} on victim boundary qubit, victim idle
+#
+arm,tau_ns,dtheta_rad,contrast,delta
+bare,0,-0.0084,0.9900,0.00415
+bare,5312,0.1686,0.9225,0.07770
+bare,10688,0.3574,0.8723,0.15503
+bare,18752,0.5803,0.7815,0.22358
+bare,26816,0.8443,0.6966,0.28543
+bare,37568,1.1246,0.6253,0.33338
+bare,48320,1.3928,0.5239,0.33606
+bare,59008,1.6958,0.4662,0.34958
+bare,75136,2.1940,0.3678,0.32729
+bare,96640,2.6488,0.2582,0.25044
+pfr,0,-0.0009,0.9877,0.00043
+pfr,5312,0.0021,0.9197,0.00097
+pfr,10688,0.0015,0.8483,0.00065
+pfr,18752,0.0183,0.7415,0.00677
+pfr,26816,0.0294,0.6336,0.00932
+pfr,37568,0.0439,0.5078,0.01114
+pfr,48320,0.0552,0.3951,0.01090
+pfr,59008,0.0765,0.2983,0.01140
+pfr,75136,0.1936,0.1748,0.01689
+pfr,96640,0.0802,0.0829,0.00332
