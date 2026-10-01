@@ -42,6 +42,13 @@ victim_fidelity/             randomized benchmarking of the victim qubit,
     fidelity_data.csv
     victim_fidelity.pdf, .png
 
+datasheet_comparison/        every coupled pair on one device, measured leakage
+                             against the numbers the provider reports
+    run_hardware.py
+    make_figure.py
+    comparison_data.csv
+    datasheet_comparison.pdf, .png
+
 ```
 
 ## Convention for the coupling rate
@@ -88,7 +95,8 @@ To collect fresh hardware data instead of using what's included, run that
 folder's `run_hardware.py` first. The IBM scripts take `--account` and
 `--channel` for IBM Quantum credentials, and `--shots` for the shot count
 per circuit. The defaults match what is in the paper, 4096 for the sweep,
-the frame hierarchy and the fidelity test, and 1000 for the two surveys.
+the frame hierarchy and the fidelity test, and 1000 for the surveys and
+the datasheet comparison.
 Submitting real hardware jobs consumes your IBM Quantum processor-time
 allocation, so check the shot count and circuit count before running, since
 cost scales with both.
